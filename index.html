@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Tinyform by tinyrise</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Tinyform</h1>
+        <h2>TinyForm 表单自动验证插件</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/tinyrise/TinyForm/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/tinyrise/TinyForm/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/tinyrise/TinyForm" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a name="tinyform-v122" class="anchor" href="#tinyform-v122"><span class="octicon octicon-link"></span></a>TinyForm <code>V1.2.2</code>
+</h1>
+
+<hr><h3>
+<a name="tinyform%E7%AE%80%E4%BB%8B" class="anchor" href="#tinyform%E7%AE%80%E4%BB%8B"><span class="octicon octicon-link"></span></a>TinyForm简介</h3>
+
+<blockquote>
+<p>TinyForm是一个JavaScript表单自动验证插件，不依赖其它任何第三方插件。<br>
+—— <a href="http://www.tinyrise.com">TinyRise官网</a></p>
+</blockquote>
+
+<h4>
+<a name="%E5%BC%95%E5%85%A5js%E4%B8%8Ecss%E6%96%87%E4%BB%B6" class="anchor" href="#%E5%BC%95%E5%85%A5js%E4%B8%8Ecss%E6%96%87%E4%BB%B6"><span class="octicon octicon-link"></span></a>引入js与css文件</h4>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"form.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<h3>
+<a name="%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8" class="anchor" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="octicon octicon-link"></span></a>如何使用：</h3>
+
+<ul>
+<li>input 标签必需是在Form表单中</li>
+<li>input 的标签 type 必需是 text,select textarea password 中的一种</li>
+</ul><h3>
+<a name="form%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7%E4%BB%8B%E7%BB%8D" class="anchor" href="#form%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7%E4%BB%8B%E7%BB%8D"><span class="octicon octicon-link"></span></a>Form标签属性介绍：</h3>
+
+<ul>
+<li>
+<strong>needsValidate</strong> : 表单是否进行验证，false不进行验证,否则进行验证。</li>
+<li>
+<strong>callback</strong> : 表单验证后的回调函数,callback(e),如果验证未能通过，则e为当前元素,通过则e为空。</li>
+</ul><h3>
+<a name="input%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7%E4%BB%8B%E7%BB%8D" class="anchor" href="#input%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7%E4%BB%8B%E7%BB%8D"><span class="octicon octicon-link"></span></a>Input标签属性介绍：</h3>
+
+<ul>
+<li>
+<strong>empty</strong> :说明此input输入允许为空</li>
+<li>
+<strong>minlen</strong> :说明此input允许输入最小长度 如:minlen=5</li>
+<li>
+<strong>maxlen</strong> :说明此input允许输入最大长度 如:minlen=32</li>
+<li>
+<strong>min</strong> :说明此input允许输入最大值 如:min=6</li>
+<li>
+<strong>max</strong> :说明此input允许输入最小值 如:max=20</li>
+<li>
+<strong>disabled</strong> :说明此input不进行验证</li>
+<li>
+<strong>alt</strong> :要提示的信息</li>
+<li>
+<strong>pattern</strong> :说明此input输入需要满足的规则:</li>
+</ul><blockquote>
+<ul>
+<li>required : 不能为空。</li>
+<li>email : 邮箱地址验证。</li>
+<li>ip : IP地址验证。</li>
+<li>id : 身份证验证。</li>
+<li>zip : 邮编验证。</li>
+<li>phone : 电话验证。</li>
+<li>mobi : 手机号码验证。</li>
+<li>date : 日期格式验证(如:2014-05-10)。</li>
+<li>datetime : 日期时间验证(如:2014-05-10 12:00:00)。</li>
+<li>int : 数字验证。</li>
+<li>float : 浮点数验证。</li>
+<li>正则表达式 : 自定义验证规则。</li>
+</ul>
+</blockquote>
+
+<h3>
+<a name="%E5%AF%B9%E5%A4%96%E5%BC%80%E6%94%BE%E7%9A%84%E5%87%BD%E6%95%B0" class="anchor" href="#%E5%AF%B9%E5%A4%96%E5%BC%80%E6%94%BE%E7%9A%84%E5%87%BD%E6%95%B0"><span class="octicon octicon-link"></span></a>对外开放的函数</h3>
+
+<blockquote>
+<ul>
+<li>autoValidate.init 初始化对表单进行扫描绑定函数</li>
+<li>autoValidate.validate(event) 初始化对表单进行扫描绑定函数</li>
+<li>autoValidate.showMsg({error:error,id:textfield,msg:alt,empty:empty}) 显示验证信息</li>
+</ul>
+</blockquote>
+
+<h3>
+<a name="%E5%8F%8D%E9%A6%88%E4%B8%8E%E5%BB%BA%E8%AE%AE" class="anchor" href="#%E5%8F%8D%E9%A6%88%E4%B8%8E%E5%BB%BA%E8%AE%AE"><span class="octicon octicon-link"></span></a>反馈与建议</h3>
+
+<ul>
+<li><p><a href="http://www.tinyrise.com">论坛&gt;&gt;进入</a></p></li>
+<li><p>邮箱：<a href="mailto:tinyrise@tinyrise.com">tinyrise@tinyrise.com</a></p></li>
+</ul><hr><p>感谢阅读这份帮助文档，<a href="http://www.tinyrise.com">访问官网</a>了解更多。</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
